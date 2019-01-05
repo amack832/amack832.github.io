@@ -1,45 +1,108 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Activity 1: Basic HTML Bio</title>
+
+<!-- jquery, popper.js to let the dropdown menu in the Navbar work -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<meta charset="UTF-8">
+<title>Landing-Weather API Dashboard</title>
+              
+    <!-- Bring in our bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Header -->
-  <h1>Alexander M</h1>
 
-  <img src="https://placehold.it/200x200" alt="Placeholder" />
-  
-  <p>I am biology graduate and hoping to use this analytics info for my future career</p>
-  <p>I am from KC, MO</p>
+  <!--Setting up intial navbar with landing page button link.-->
+     <nav class="navbar">
+      <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">Latitude</a>
+            </div>
+        
+            <!--Setting up NavBar choices on right side of Nav with dropdown connected to specific visualizations-->
+            <div class="navbar">            
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="max_temp.html">Max Temperature</a>
+                        <a class="dropdown-item" href="humidity.html">Humidity</a>
+                        <a class="dropdown-item" href="cloud.html">Cloudiness</a>
+                        <div class="dropdown-divider"></div>
+                        <a classhref="wind.html">Wind Speed</a>
+                      </div>
+                  </li>
+                <li><a href="csvdata.html">Data</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+        <!-- Visualizations links to other analysis pages.-->
+        <div class="container">
+            <div class="row">
+            <div class="col-md-1"></div>  
+                <div class="col-md-6 col-md offset-2">
+                <div class="box">      
+                    <h1>Summary: Latitude vs. X</h1>
+                        <img src="Images/Fig1.png" align="left" width="300px" height="250px">
+                        <p>The purpose of this project is to analysis how the weather changes as you get closer to the equator. To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities. </p>
+                        <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site provides the source data and visualizations created as part of the analysis as well as explanations and descriptions of any trends and correlations witnessed.</p> 
+                </div> 
+            </div>    
+               <div class="col-md-4 sidebar">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h1>Visualizations</h1>
+                  </div>
+                </div>
+               <div class="row">
+        
+                  <div class="col-md-3">    
+                       <a href="max_temp.html"><img src="Images/Fig1.png" width="200px" height="200px"></a>
+                  </div>
+                  <div class="col-md-3"></div>
+                
+                  <div class="col-md-3">  
+                       <a href="humidity.html"><img src="Images/Fig2.png" width="200px" height="200px"></a>
+                  </div>
+                  <div class="col-md-3"></div>  
+               </div>   
+               <div class ="row"> 
+                  
+                  <div class="col-md-3">  
+                    <a href="cloud.html"><img src="Images/Fig3.png" width="200px" height="200px"></a>
+                  </div>
+                  <div class="col-md-3"></div>
+        
+                  <div class="col-md-3">     
+                    <a href="wind.html"><img src="Images/Fig4.png" width="200px" height="200px"></a>
+                  </div>
+                  <div class="col-md-3"></div>
+                </div>    
+             </div>         
+            <div class="col-md-1"></div>
+          </div>      
+        </div>	 	
+ </body>
 
-  <ul>
-    <li><strong>Email:</strong><a href="#">somthing@gmail.com</a></li>
-    <li><strong>Twitter:</strong><a href="https://twitter.com/Jackeduponmtdew">Jackeduponmtdew</a></li>
-    <li><strong>LinkedIn:</strong><a href="https://www.linkedin.com/in/alexander-mackenzie-36864266/">Alexander MacKenzie</a></li>
-  </ul>
-  
-  <!--Table-->
-  <table border="3">
-    <tr>
-      <th>Books</th>
-      <th>Movies</th>
-      <th>Games</th>
-    </tr>
-    <tr>
-      <td>Harry Potter</td>
-      <td>Indiana Jones</td>
-      <td>Red Dead Redemption</td>
-    </tr>
-    <tr>
-      <td>Lord of the Rings</td>
-      <td>Inception</td>
-      <td>Call of Duty</td>
-    </tr>
-  </table>
 
 
-</body>
 
-</html>
+
+
+
+
+
